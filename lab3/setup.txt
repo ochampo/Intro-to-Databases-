@@ -1,0 +1,50 @@
+create table light(
+country text NOT NULL,
+name  text NOT NULL,
+nickname text ,
+record  text NOT NULL,
+ id    text Primary key NOT NULL 
+
+);
+
+
+create table welt (
+country text NOT NULL,
+name  text NOT NULL,
+nickname text ,
+record  text NOT NULL,
+ id    text Primary key NOT NULL 
+
+);
+
+
+
+
+
+
+create table pound4pound (
+name text NOT NULL,
+rank  text NOT NULL
+
+);
+
+
+
+
+
+
+
+.separator ","
+
+
+.import data/lw.csv light 
+.import data/170.csv welt 
+.import data/pound4pound.csv pound4pound
+
+
+
+
+
+
+
+

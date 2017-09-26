@@ -1,0 +1,88 @@
+\documentclass{article}
+
+\begin{document}
+\title{lab 2 Part2 }
+\maketitle
+
+\section*{Problem 1}
+Write a query that will return the count of elements in the Entry columns of the Alz
+table .\\
+\textit{soultion:}
+select count(entry) from Alz;\\
+3389
+
+\section*{Problem 2}
+Write a query that will return the distinct count elements in the Entry column
+of the Alz table.
+
+
+\textit{soultion:}
+select count(distinct(entry)) from Alz;\\
+3389\\
+
+yes it is a good primary key because there is no similar values therefore it would be a good idea to make it a primary key. 
+
+\section*{Problem 3}
+Discuss: From the above two queries, is this column a good primary key for the Alz table? why or why not? (if not, then what column would you recommend, instead?)\\
+\textit{soultion:}
+Yes it is a good primary key because there is no similar values therefore it would be a good idea to make it a primary key. 
+\section*{problem 4}
+Write a query that will return the number of records associated with the organism‘‘Zea mays (Maize)’’ in the Alz and Park tables.\\
+\textit{soultion:}\\
+sqlite select count(entry) from Alz where Organism == "Zea mays (Maize)";\\
+0\\
+sqlite select count(entry) from Park where Organism == "Zea mays (Maize)";\\
+9
+
+\section*{problem 5}
+
+\textit{soultion}
+select count(a.Organism ) from Apop a ;
+100082
+sqlite> select count(a.Organism ) from Park a ;
+127368
+sqlite> select count(a.Organism ) from Alz a ;
+3389
+
+\section*{Problem 6}
+\textit{soultion:}
+Homo sapiens (Human)\\
+Mus musculus (Mouse)\\
+Rattus norvegicus (Rat)\\
+Bos taurus (Bovine)\\
+Pan troglodytes (Chimpanzee)\\
+Danio rerio (Zebrafish) (Brachydanio rerio)\\
+.....\\
+ select count(distinct( p.organism)) from Park p , Alz a where p.Organism == a.Organism;
+21
+
+\section*{problem 7} 
+\textit{Soultion:}
+select a.entry from Apop a where a.Organism =="Bothrops brazili";\\
+select a.entry from Park a where a.Organism =="Bothrops brazili";\\
+C5H767\\
+C5H755\\
+select a.entry from Alz a where a.Organism =="Bothrops brazili";\\
+
+It turns out the  Park table was the only one that had any matches. 
+\section*{Problem 8}
+ 
+\textit{Soultion:}
+select count(distinct(p.gene\_names)) from Alz a, Park p where a.gene\_names == p.gene\_names; \\
+30
+
+\section*{Problem 9}
+\textit{Soultion:}
+select distinct(a.gene\_names) from Apop a, Alz al where a.Organism == al.Organism limit 10;
+TP53 P53\\
+Bcl2 Bcl-2\\
+BCL2\\
+BAX BCL2L4\\
+PYCARD ASC CARD5 TMS1\\
+FAS APT1 FAS1 TNFRSF6\\
+BIRC5 API4 IAP4\\
+Bax\\
+XIAP API3 BIRC4 IAP3\\
+BIRC2 API1 MIHB RNF48\\
+
+\end{document}

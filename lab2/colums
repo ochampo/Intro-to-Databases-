@@ -1,0 +1,29 @@
+CREATE TABLE Apop(
+Entry VARCHAR NOT NULL PRIMARY KEY,
+entry_name VARCHAR NOT NULL,
+Status VARCHAR NOT NULL,
+Protein_name VARCHAR  NOT NULL,
+gene_names VARCHAR NOT NULL,
+Organism VARCHAR NOT NULL,
+Length   VARCHAR NOT NULL
+);
+
+
+
+CREATE TABLE Park(
+Entry VARCHAR NOT NULL PRIMARY KEY,
+entry_name VARCHAR NOT NULL,
+Status VARCHAR NOT NULL,
+Protein_name VARCHAR  NOT NULL,
+gene_names VARCHAR NOT NULL,
+Organism VARCHAR NOT NULL,
+Length   VARCHAR NOT NULL
+);
+
+
+
+.separator "\t"
+.import data/uniprot-apoptosis.tab Apop
+.import data/uniprot-parkinson.tab Park
+
+
